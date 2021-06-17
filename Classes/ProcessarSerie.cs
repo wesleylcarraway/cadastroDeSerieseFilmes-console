@@ -2,11 +2,11 @@ using System;
 
 namespace DIO.Series
 {
-    public class ProcessarSerie
+    public class ProcessarSerie : Processar
     {
         static SerieRepositorio repositorioSerie = new SerieRepositorio();
 
-        public void Excluir()
+        public override void Excluir()
 		{                     
             Console.Write("Digite o id da série: ");
 			int indiceSerie = int.Parse(Console.ReadLine());
@@ -14,7 +14,7 @@ namespace DIO.Series
 			repositorioSerie.Exclui(indiceSerie);	
 		}
 
-        public void Visualizar()
+        public override void Visualizar()
 		{          
             Console.Write("Digite o id da série: ");
 			int indiceSerie = int.Parse(Console.ReadLine());
@@ -24,7 +24,7 @@ namespace DIO.Series
 			Console.WriteLine(serie);            			
 		}
 
-        public void Atualizar()
+        public override void Atualizar()
         {
             Console.Write("Digite o id da série: ");
             int indiceSerie = int.Parse(Console.ReadLine());
@@ -56,7 +56,7 @@ namespace DIO.Series
             repositorioSerie.Atualiza(indiceSerie, atualizaSerie);
         }
 
-        public void Listar()
+        public override void Listar()
         {
             Console.WriteLine("Séries: ");
 
@@ -75,7 +75,7 @@ namespace DIO.Series
             }
         }
 
-        public void Inserir()
+        public override void Inserir()
         {
             Console.WriteLine("Inserir nova série");
 
